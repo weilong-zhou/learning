@@ -1,1 +1,24 @@
 
+# VTS测试套件
+
+手动编译，与CTS类似
+$ source build/envsetup.sh
+$ lunch aosp_m3755-userdebug  
+$ make vts -j16
+
+编译结果目录
+aosp/out/host/linux-x86/cts/android-vts
+
+cd 到android-vts/tools目录，运行vts
+./vts-tradefed
+
+运行全部模块
+run vts
+
+运行单个模块
+run vts -m mode_name
+run vts -m VtsKernelLtp
+
+运行单个模块单个case
+run vts -m mode_name -t test_case_name
+run vts -m VtsKernelLtp -t mm.thp01_32bit
